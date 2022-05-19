@@ -1,8 +1,26 @@
-# cod_2
 import 'package:flutter/material.dart';
 
-class Myapp extends StatelessWidget {
-  const Myapp({Key? key}) : super(key: key);
+/*
+Nós podemos receber os parametros de forma dinamica!!
+
+Primeiro utilizamos a palavra chave "final"
+Depois o tipo de dado: String, int, ....
+Por ultimo o nome que queremos dar
+
+final String nome;
+*/
+
+class MyCard extends StatelessWidget {
+  const MyCard({
+    Key? key,
+    this.name,
+    this.phone,
+    this.gmail,
+  }) : super(key: key);
+
+  final String? name;
+  final String? phone;
+  final String? gmail;
 
   @override
   Widget build(BuildContext context) {
@@ -30,9 +48,9 @@ class Myapp extends StatelessWidget {
             Divider(),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
-                const Text(
-                  'Name:',
+              children: [
+                Text(
+                  'Name:' + name!,
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 15.0,
@@ -42,9 +60,9 @@ class Myapp extends StatelessWidget {
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
-                const Text(
-                  'Phone:',
+              children: [
+                Text(
+                  'Phone:' + phone!,
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 15.0,
@@ -54,9 +72,9 @@ class Myapp extends StatelessWidget {
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
-                const Text(
-                  'Gmail:',
+              children: [
+                Text(
+                  'Gmail:' + gmail!,
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 15.0,
@@ -102,3 +120,4 @@ class Myapp extends StatelessWidget {
     );
   }
 }
+
